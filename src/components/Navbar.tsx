@@ -10,15 +10,15 @@ const Navbar = () => {
   }
 
   return (
-    <nav className='bg-darkGray text-white'>
-      <div className='mx-10 flex flex-wrap items-center justify-between p-4'>
+    <nav className='text-white'>
+      <div className='flex lg:flex-wrap items-center justify-between lg:pt-[70px] p-4 lg:mx-10'>
         {/* Logo */}
         <a href='/' className='flex mx-[19px] items-center'>
-          <img src={Logo} className='h-[70px]' alt='Flowbite Logo' />
+          <img src={Logo} className='lg:h-[70px]' alt='Flowbite Logo' />
         </a>
 
         {/* Mobile Burger Menu Button */}
-        <div className='flex lg:order-2 space-x-3 rtl:space-x-reverse'>
+        <div className='flex space-x-3 lg:order-2 rtl:space-x-reverse'>
           <button
             type='button'
             className='hover:scale-110'
@@ -35,7 +35,7 @@ const Navbar = () => {
           } w-full lg:flex lg:w-auto lg:order-1`}
           id='navbar-sticky'
         >
-          <ul className='flex flex-col text-[25px] p-4 lg:p-0 mt-4 font-bold border rounded-lg lg:space-x-16 rtl:space-x-reverse lg:flex-row lg:mt-0 lg:border-0 text-white bg-darkGray lg:bg-transparent'>
+          <ul className='flex flex-col text-[25px] p-4 lg:p-0 mt-4 font-bold border rounded-lg lg:space-x-16 rtl:space-x-reverse lg:flex-row lg:mt-0 lg:border-0 text-white lg:bg-transparent'>
             <li>
               <a
                 href='#features'
