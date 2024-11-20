@@ -3,8 +3,8 @@ import Navbar from './Navbar'
 
 const Header = () => {
   return (
-    <div className='h-screen relative overflow-hidden bg-[url("/hero-bgMain.png")]'>
-      <div className='h-[1620px] z-0 w-[1940px] absolute -top-[426px] -left-[132px] bg-[url("/hero-bg.png")]' />
+    <div className='min-h-screen relative overflow-hidden bg-[url("/hero-bgMain.png")]'>
+      <div className='h-[1620px] overflow-hidden z-0 w-[1940px] absolute -top-[426px] -left-[132px] bg-[url("/hero-bg.png")]' />
       <div className='relative z-10'>
         <Navbar />
       </div>
