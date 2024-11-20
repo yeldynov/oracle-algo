@@ -10,7 +10,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className='text-white'>
+    <nav className='text-white '>
       <div className='flex lg:flex-wrap items-center justify-between lg:pt-[70px] p-4 lg:mx-10'>
         {/* Logo */}
         <a href='/' className='flex mx-[19px] items-center'>
