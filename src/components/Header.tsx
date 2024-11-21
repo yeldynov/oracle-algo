@@ -3,13 +3,13 @@ import Navbar from './Navbar'
 
 const Header = () => {
   return (
-    <div className='min-h-screen relative overflow-hidden bg-[url("/hero-bgMain.png")]'>
+    <div className='min-h-screen overflow-hidden bg-no-repeat bg-cover  bg-[url("/hero-bgMain.png")]'>
       <div className='h-[1620px] overflow-hidden z-0 w-[1940px] absolute -top-[426px] -left-[132px] bg-[url("/hero-bg.png")]' />
       <div className='relative z-10'>
         <Navbar />
       </div>
       {/* hero top */}
-      <div className='flex pt-32 z-10 relative flex-col items-center space-y-10 text-center lg:w-[1091px] mx-auto'>
+      <div className='flex pt-20 z-10 relative flex-col items-center space-y-10 text-center lg:w-[1091px] mx-auto'>
         <h1 className='text-3xl font-bold lg:text-6xl'>
           Clear Signals, Confident Trades
         </h1>
