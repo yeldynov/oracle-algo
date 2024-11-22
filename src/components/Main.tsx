@@ -2,7 +2,7 @@ const Main = () => {
   return (
     <div
       id='features'
-      className='relative text-black bg-[#F5F5F7] p-5 lg:p-[146px] w-full mx-auto mt-5 lg:mt-0 '
+      className='relative text-black overflow-x-hidden bg-[#F5F5F7] p-5 lg:p-[146px] w-full mx-auto mt-5 lg:mt-0 '
     >
       {/* <img
         className='relative mx-auto lg:-top-72'

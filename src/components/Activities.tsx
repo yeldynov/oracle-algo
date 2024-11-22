@@ -1,6 +1,6 @@
 const Activities = () => {
   return (
-    <div className='text-white py-10 lg:py-[217px] relative bg-black'>
+    <div className='text-white py-10 lg:py-[217px] relative overflow-x-hidden bg-black'>
       <div className='relative z-10'>
         <h2 className='text-3xl px-4 lg:text-6xl font-semibold text-center leading-[119%] lg:w-[1002px] mx-auto'>
           Take Full control of your Trading Activites
@@ -23,7 +23,7 @@ const Activities = () => {
             </div>
             {/* right */}
             <div className='flex-1 m-4'>
-              <img src='/public/ipad.png' alt='' />
+              <img src='/ipad.png' alt='' />
             </div>
           </div>
         </div>
@@ -47,7 +47,7 @@ const Activities = () => {
               </div>
               {/* bottom */}
               <div className=''>
-                <img src='/public/trend.png' alt='' />
+                <img src='/trend.png' alt='' />
               </div>
             </div>
           </div>
@@ -70,10 +70,15 @@ const Activities = () => {
               </div>
               {/* bottom */}
               <div className=''>
-                <img src='/public/oscillator.png' alt='' />
+                <img src='/oscillator.png' alt='' />
               </div>
             </div>
           </div>
+        </div>
+        <div className='flex items-center justify-center px-5 pt-12'>
+          <button className='bg-[#D7D7D7] hover:brightness-110 font-bold text-lg lg:text-3xl text-black rounded-xl px-20 py-4'>
+            Subscribe Today
+          </button>
         </div>
       </div>
     </div>
