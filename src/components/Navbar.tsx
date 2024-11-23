@@ -6,7 +6,6 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
 
-  // Detect scroll position to change navbar background
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
@@ -18,7 +17,6 @@ const Navbar = () => {
 
     window.addEventListener('scroll', handleScroll)
 
-    // Cleanup the event listener on unmount
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }
@@ -32,7 +30,7 @@ const Navbar = () => {
     <nav
       className={`${
         isScrolled ? 'bg-black' : 'bg-transparent'
-      } text-white fixed top-0 left-0 w-full z-50 transition-all duration-300`}
+      } text-white fixed top-0 left-0 right-0 w-full max-w-[1728px] mx-auto z-50 transition-all duration-300`}
     >
       <div className='flex items-center max-w-[1728px] mx-auto justify-between p-4 lg:px-10'>
         {/* Logo */}
