@@ -3,9 +3,9 @@ import Navbar from './Navbar'
 
 const Header = () => {
   return (
-    <div className='min-h-screen overflow-hidden bg-no-repeat bg-cover  bg-[url("/hero-bgMain.png")]'>
+    <div className='min-h-screen pb-20 overflow-hidden bg-no-repeat bg-cover  bg-[url("/hero-bgMain.png")]'>
       <div className='h-[1620px] overflow-hidden z-0 max-w-[1728px] absolute -top-[426px] -left-[132px] bg-[url("/hero-bg.png")]' />
-      <div className='relative z-10'>
+      <div className='relative z-20'>
         <Navbar />
       </div>
       {/* hero top */}

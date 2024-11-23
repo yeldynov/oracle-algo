@@ -87,7 +87,10 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <div className='bg-black pb-[260px] border-none overflow-x-hidden'>
+    <section
+      id='results'
+      className='bg-black pb-[260px] border-none overflow-x-hidden'
+    >
       <h2 className='text-3xl px-4 lg:text-6xl font-semibold text-center leading-[119%] lg:w-[1002px] mx-auto'>
         Real Traders, Real Stories
       </h2>
@@ -116,7 +119,7 @@ const Testimonials = () => {
           ))}
         </Swiper>
       </div>
-    </div>
+    </section>
   )
 }
 

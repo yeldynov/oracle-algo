@@ -1,6 +1,6 @@
 const Subscription = () => {
   return (
-    <div className='mb-40 overflow-hidden lg:mb-60 '>
+    <section id='pricing' className='mb-40 overflow-hidden lg:mb-60 '>
       <div className="h-[550px] bg-no-repeat z-0 w-full absolute bg-[url('/bg-charting.png')] bg-cover bg-center blur-3xl transform scale-x-[-1]" />
       <h2 className='text-3xl px-4 mb-20 lg:text-6xl font-semibold text-center leading-[119%] mx-auto'>
         Subscription Plans
@@ -81,7 +81,7 @@ const Subscription = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

@@ -1,47 +1,59 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Logo from '../assets/logo.png'
 import Burger from '../assets/burger.png'
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  // Detect scroll position to change navbar background
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true)
+      } else {
+        setIsScrolled(false)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    // Cleanup the event listener on unmount
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
   }
 
   return (
-    <nav className='text-white '>
-      <div className='flex lg:flex-wrap items-center justify-between lg:pt-[70px] p-4 lg:mx-10'>
+    <nav
+      className={`${
+        isScrolled ? 'bg-black' : 'bg-transparent'
+      } text-white fixed top-0 left-0 w-full z-50 transition-all duration-300`}
+    >
+      <div className='flex items-center justify-between p-4 lg:px-10'>
         {/* Logo */}
-        <a href='/' className='flex mx-[19px] items-center'>
-          <img src={Logo} className='lg:h-[70px]' alt='Flowbite Logo' />
+        <a href='#' className='flex items-center'>
+          <img src={Logo} className='h-10 lg:h-[70px]' alt='Logo' />
         </a>
 
         {/* Mobile Burger Menu Button */}
-        <div className='flex space-x-3 lg:order-2 rtl:space-x-reverse'>
-          <button
-            type='button'
-            className='hover:scale-110'
-            onClick={toggleMenu}
-          >
-            <img src={Burger} alt='Burger Menu' />
-          </button>
-        </div>
-
-        {/* Desktop Menu */}
-        <div
-          className={`${
-            isMenuOpen ? 'block' : 'hidden'
-          } w-full lg:flex lg:w-auto lg:order-1`}
-          id='navbar-sticky'
+        <button
+          type='button'
+          className='w-20 lg:hidden hover:scale-110 focus:outline-none'
+          onClick={toggleMenu}
         >
-          <ul className='flex flex-col text-[25px] p-4 lg:p-0 mt-4 font-bold border rounded-lg lg:space-x-16 rtl:space-x-reverse lg:flex-row lg:mt-0 lg:border-0 text-white lg:bg-transparent'>
+          <img src={Burger} alt='Burger Menu' />
+        </button>
+
+        {/* Desktop Links */}
+        <div className='justify-end flex-1 hidden lg:flex'>
+          <ul className='flex space-x-8 text-2xl font-bold'>
             <li>
-              <a
-                href='#features'
-                className='hover:text-gray-400'
-                aria-current='page'
-              >
+              <a href='#features' className='hover:text-gray-400'>
                 Features
               </a>
             </li>
@@ -57,6 +69,52 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
+      </div>
+
+      {/* Mobile Menu */}
+      <div
+        className={`${
+          isMenuOpen ? 'fixed' : 'hidden'
+        } top-0 left-0 w-full h-full bg-black bg-opacity-95 flex flex-col items-center justify-center lg:hidden z-50`}
+      >
+        {/* Close Button */}
+        <button
+          type='button'
+          className='absolute text-6xl text-white top-2 right-9 focus:outline-none'
+          onClick={toggleMenu}
+        >
+          &times;
+        </button>
+
+        <ul className='text-xl font-bold text-center'>
+          <li className='mb-4'>
+            <a
+              onClick={() => setIsMenuOpen(false)}
+              href='#features'
+              className='block px-4 py-2 hover:text-gray-400'
+            >
+              Features
+            </a>
+          </li>
+          <li className='mb-4'>
+            <a
+              onClick={() => setIsMenuOpen(false)}
+              href='#results'
+              className='block px-4 py-2 hover:text-gray-400'
+            >
+              Results
+            </a>
+          </li>
+          <li>
+            <a
+              onClick={() => setIsMenuOpen(false)}
+              href='#pricing'
+              className='block px-4 py-2 hover:text-gray-400'
+            >
+              Pricing
+            </a>
+          </li>
+        </ul>
       </div>
     </nav>
   )
